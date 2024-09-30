@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Picker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <!-- Leva slika iz foldera izbor_pobednika -->
+     <img src="Ria_Main_Logo_Descriptor_Color_RGB 2.png" alt="Leva slika" class="left-image">
+
+     <!-- Desna slika iz foldera izbor_pobednika -->
+     <img src="Transparent 1.png" alt="Desna slika" class="right-image">
+    <div class="container">
+        <div class="left-column">
+            <h1>Plasirani Operateri</h1>
+            <div class="box">
+                <div id="operateriInput" contenteditable="true" placeholder="Unesite imena operatera, jedno po liniji">
+                <ul id="operatorList"></ul></ul> <!-- Lista za prikaz imena operatera -->
+            </div>
+            </div>
+        </div>
+
+        <div class="middle-column">
+            <div class="frame">
+                <p id="currentName">Ime</p>
+            </div>
+            <button id="startButton">Pokreni</button>
+        </div>
+
+        <div class="rewards">
+            <h2>Nagrade</h2>
+            <ul id="rewardList">
+                <li><span class="reward-name">Vikend Putovanje u Trst</span> - <span class="winner" id="winner1"></span></li>
+                <li><span class="reward-name">Laptop</span> - <span class="winner" id="winner2"></span></li>
+                <li><span class="reward-name">Poklon kartica </span> - <span class="winner" id="winner3"></span></li>
+                <li><span class="reward-name">Poklon kartica </span> - <span class="winner" id="winner4"></span></li>
+                <li><span class="reward-name">Poklon kartica </span> - <span class="winner" id="winner5"></span></li>
+                <li><span class="reward-name">Poklon kartica </span> - <span class="winner" id="winner6"></span></li>
+                <li><span class="reward-name">Poklon kartica </span> - <span class="winner" id="winner7"></span></li>
+                <li><span class="reward-name">Poklon kartica </span> - <span class="winner" id="winner8"></span></li>
+                <li><span class="reward-name">Poklon kartica </span> - <span class="winner" id="winner9"></span></li>
+                <li><span class="reward-name">Poklon kartica </span> - <span class="winner" id="winner10"></span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal za izmenu nagrada -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Izmena Nagrada</h2>
+            <ul id="editRewardsList">
+                <li>  <input type="text" value="Vikend Putovanje u Trst"> - <input type="text" value=""></li>
+                <li>  <input type="text" value="Laptop"> - <input type="text" value=""></li>
+                <li>  <input type="text" value="Poklon kartica "> - <input type="text" value=""></li>
+                <li>  <input type="text" value="Poklon kartica "> - <input type="text" value=""></li>
+                <li>  <input type="text" value="Poklon kartica "> - <input type="text" value=""></li>
+                <li>  <input type="text" value="Poklon kartica "> - <input type="text" value=""></li>
+                <li>  <input type="text" value="Poklon kartica "> - <input type="text" value=""></li>
+                <li>  <input type="text" value="Poklon kartica "> - <input type="text" value=""></li>
+                <li>  <input type="text" value="Poklon kartica "> - <input type="text" value=""></li>
+                <li>  <input type="text" value="Poklon kartica "> - <input type="text" value=""></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Popup modal -->
+<div id="winnerModal" class="modal">
+    <div class="modal-content">
+        <span id="closeWinnerModal" class="close">&times;</span>
+        <h2>Čestitamo!</h2>
+        <p id="winnerName">Ime dobitnika</p>
+        <button id="winnerName">Ime dobitnika</button>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

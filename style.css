@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Exo 2', sans-serif;
+    background-color: #fad2be;
+    position: relative;
+}
+.left-image, .right-image {
+    position: absolute;
+    bottom: calc(100% + 20px); /* Podigni slike 20px iznad kontejnera */
+    width: 150px; /* Širina slike, može se prilagoditi */
+    height: auto;
+}
+
+/* Pomeranje slike sa leve strane 50px ka centru */
+.left-image {
+    left: 50px; /* Pomeranje slike levo za 50px ka sredini */
+}
+
+/* Pomeranje slike sa desne strane 50px ka centru */
+.right-image {
+    right: 50px; /* Pomeranje slike desno za 50px ka sredini */
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 98%;
+    height: 620px;
+    margin: 100px auto 0 auto;
+    background-color: white;
+    border-radius: 15px;
+    padding: 5px;
+}
+h1, h2 {
+    font-size: 36px; /* Postavite istu veličinu fonta za H1 i H2 */
+    font-weight: bold; /* Podebljan tekst */
+    margin-bottom: 5px; /* Razmak ispod heding-a */
+    text-align: left; /* Poravnanje teksta na sredinu (opcionalno) */
+}
+
+
+.left-column {
+    padding: 10px;
+}
+
+.left-column h1 {
+    margin-bottom: 10px;
+    color: #ff6100; /* Boja za "Plasirani Operateri" */
+}
+
+.box {
+    border: 1px solid #ccc;
+    min-height: 100px;
+    padding: 5px;
+}
+
+#operateriInput {
+    border: none; /* Uklanjanje vidljivih granica */
+    min-width: 500px; /* Minimalna širina za unos */
+    max-width: 500px; /* Maksimalna širina za unos */
+    min-height: 500px; /* Minimalna visina za unos */
+    max-height: 500px;
+    padding: 10px; /* Padding unutar polja */
+    color: #ff6100; /* Boja teksta */
+    font-weight: 500px;
+    column-count:4; /* Broj kolona */
+    column-gap: 10px; /* Razmak između kolona */
+    font-size: 14px; /* Prilagodljiva veličina fonta */
+    overflow:scroll; /* Skriva višak sadržaja */
+    overflow-y: hidden;
+
+}
+
+
+.ime {
+    white-space: nowrap; /* Sprečava prelamanje imena */
+    overflow-x: hidden; /* Skriva višak sadržaja */
+    overflow-y: scroll;
+    text-overflow: ellipsis; /* Dodaje tri tačke na kraju ako je tekst predug */
+    font-weight: bold;
+    padding: 5px; /* Unutrašnji razmak unutar svakog imena */
+    background-color: #f0f0f0; /* Pozadina za imena (možeš promeniti) */
+    border-radius: 5px; /* Zaobljeni uglovi */
+    min-width: 50px; /* Minimalna širina za svako ime */
+    max-width: 100px; /* Maksimalna širina imena */
+    box-sizing: border-box; /* Uključuje padding i border u ukupnu širinu */
+}
+
+
+.middle-column {
+    margin-top: 150px; /* Spustite srednju kolonu za 200 piksela */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centriranje sadržaja unutar kolone */
+}
+
+
+.frame {
+    width: 350px;
+    height: 75px;
+    background-color: #fad2be; /* Dodato tačka i zarez */
+    border: 2px solid rgba(10, 25, 50, 0.1);
+    border-radius: 38px; /* Zaobljeni rubovi */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Dodano za bolji rad sa internim elementima */
+}
+
+
+#currentName {
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    z-index: 1; /* Osigurava da tekst bude iznad okvira */
+}
+
+#startButton {
+    width: 210px; /* Širina dugmeta */
+    height: 74px; /* Visina dugmeta */
+    font-family: 'Exo 2', sans-serif; /* Postavite font */
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #ff6100; /* Pozadinska boja dugmeta (možete promeniti ako želite) */
+    color: white; /* Boja teksta na dugmetu */
+    border: none; /* Bez vidljivih granica */
+    border-radius: 38px; /* Zaobljeni rubovi dugmeta */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Blaga senka */
+    cursor: pointer; /* Pomeranje pokazivača na ruku kada se pređe mišem preko dugmeta */
+    margin-top: 50px; /* Razmak od okvira, ako je potrebno */
+    display: flex; /* Koristi se za centriranje teksta */
+    justify-content: center; /* Centriranje horizontalno */
+    align-items: center; /* Centriranje vertikalno */
+    transition: background-color 0.3s; /* Glatka promena boje prilikom prelaska mišem */
+}
+
+#startButton:hover {
+    background-color: #ff7a00; /* Promena boje prilikom prelaska mišem (opciono) */
+}
+
+.rewards {
+    padding: 10px;
+}
+
+.rewards h2 {
+    margin-bottom: 10px;
+    color: #ff6100; /* Boja za "Nagrade" */
+}
+
+#rewardList {
+    list-style: none;
+    padding: 0; /* Uklanja default padding */
+}
+
+#rewardList {
+    height: 500px; /* Fiksna visina kolone */
+    display: flex; /* Koristi fleksboks za raspored */
+    flex-direction: column; /* Raspored u kolonu */
+    justify-content: space-between; /* Raspoređuje nagrade ravnomerno unutar visine */
+    padding: 10px; /* Unutrašnji razmak */
+    box-sizing: border-box; /* Uključuje padding i border u ukupnu visinu */
+}
+
+#rewardList li {
+    background-color: white; /* Boja pozadine za nagrade */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Crni stroke na 10% transparency */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Senka */
+    color: #0A1932; /* Boja teksta unutra */
+    padding: 10px; /* Unutrašnji razmak unutar svakog elementa */
+    margin: 3px 0; /* Razmak između nagrada */
+    font-size: calc(1rem * 1.1); /* Povećava veličinu fonta za 10% */
+    border-radius: 10px; /* Zaobljene ivice */
+    text-align: left; /* Poravnava tekst levo unutar svakog elementa */
+    width: 450px; /* Fiksna širina */
+    height: 55px; /* Fiksna visina */
+    box-sizing: border-box; /* Uključuje padding i border u ukupnu visinu */
+}
+
+
+
+
+
+
+/* Ako je potrebno, centrirajte ceo #rewardList u levoj koloni */
+#rewardList {
+    display: flex; /* Koristi fleksboks za centriranje */
+    flex-direction: column; /* Raspored u kolonu */
+    align-items: center; /* Centriranje unutar kolone */
+}
+
+.modal {
+    display: none; /* Modal je skriven po defaultu */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal {
+    display: none; /* Sakrij modal po defaultu */
+    position: fixed; /* Apsolutno pozicioniranje u odnosu na prozor */
+    z-index: 1000; /* Uverite se da je iznad drugih elemenata */
+    left: 0; /* Početna pozicija */
+    top: 0; /* Početna pozicija */
+    width: 100%; /* Širina pop-up prozora */
+    height: 100%; /* Visina pop-up prozora */
+    overflow: auto; /* Uključuje skrol ako je potrebno */
+    background-color: rgba(0, 0, 0, 0.5); /* Poluprozirna pozadina */
+}
+
+/* Stil za sadržaj modalnog prozora */
+.modal-content {
+    background-color: white; /* Pozadina modalnog prozora */
+    margin: 15% auto; /* Udaljenost od vrha i centriranje */
+    padding: 20px; /* Unutrašnji razmak */
+    border: 1px solid #888; /* Okvir */
+    width: 80%; /* Širina modalnog prozora (možete prilagoditi) */
+    max-width: 600px; /* Maksimalna širina */
+    border-radius: 5px; /* Zaobljeni uglovi */
+}
+
+/* Stil za zatvaranje modalnog prozora */
+.close {
+    color: #aaa; /* Boja za "x" */
+    float: right; /* Pomera "x" u desni ugao */
+    font-size: 28px; /* Veličina fonta */
+    font-weight: bold; /* Debeli font */
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Boja kada se pređe mišem */
+    text-decoration: none; /* Uklanja podvlačenje */
+    cursor: pointer; /* Prikazuje ruku kada se pređe mišem */
+}
+
+/* Stil za naslove u modalu */
+.modal-content h2 {
+    color: #ff6100; /* Boja za naslove */
+    font-weight: bold; /* Podebljani tekst */
+}
+
+/* Stil za listu nagrada u modalu */
+#editRewardsList {
+    list-style-type: none; /* Bez oznaka na listi */
+    padding: 0; /* Bez padding-a */
+}
+
+/* Stil za svaki stavku liste */
+#editRewardsList li {
+    display: flex;
+    align-items: center; /* Poravnava sadržaj po vertikali */
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    color: #0A1932; /* Boja teksta */
+    padding: 8px; /* Razmak unutar stavke */
+    margin: 5px 0; /* Razmak između stavki */
+    border-radius: 5px; /* Zaobljeni uglovi */
+    height: 50px; /* Fiksna visina */
+}
+
+/* Prilagođavanje input polja */
+#editRewardsList li input[type="text"] {
+    flex: 1; /* Uzimanje preostalog prostora */
+    padding: 4px; /* Padding unutar input polja */
+    border: 1px solid #ccc; /* Okvir oko input polja */
+    border-radius: 3px; /* Zaobljeni uglovi */
+}
